@@ -1,24 +1,15 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Courses from './Components/Courses/Courses';
+import fakeData from './fakeData/courses'
+import { useState } from 'react';
 
 function App() {
+  const [availableCourses,setavailableCourses] = useState(fakeData);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1 className='available-courses'>Available Courses : {availableCourses.length}</h1>
+      <Courses ></Courses>
     </div>
   );
 }
